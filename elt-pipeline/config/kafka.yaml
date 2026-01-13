@@ -1,0 +1,42 @@
+# Kafka Configuration
+
+broker:
+  bootstrap_servers: 
+    - kafka:9092
+  
+topics:
+  india_finance:
+    name: india_finance_topic
+    partitions: 3
+    replication_factor: 1
+    retention_ms: 604800000  # 7 days
+    segment_ms: 86400000     # 1 day
+    
+  upi_transaction:
+    name: upi_transaction_topic
+    partitions: 3
+    replication_factor: 1
+    retention_ms: 604800000
+    segment_ms: 86400000
+
+producer:
+  acks: all
+  retries: 3
+  batch_size: 16384
+  linger_ms: 10
+  buffer_memory: 33554432
+  compression_type: snappy
+  max_in_flight_requests: 1
+  request_timeout_ms: 30000
+  
+consumer:
+  group_id: elt-consumer-group
+  auto_offset_reset: earliest
+  enable_auto_commit: true
+  auto_commit_interval_ms: 5000
+  session_timeout_ms: 30000
+  max_poll_records: 500
+  
+schema_registry:
+  enabled: false
+  url: http://schema-registry:8081

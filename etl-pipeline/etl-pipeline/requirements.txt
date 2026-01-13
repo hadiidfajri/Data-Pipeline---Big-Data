@@ -1,0 +1,30 @@
+# Core dependencies
+apache-airflow==2.7.3
+pyspark==3.4.0
+pandas==2.0.3
+numpy==1.24.3
+
+# Kafka
+kafka-python==2.0.2
+
+# Database
+psycopg2-binary==2.9.9
+SQLAlchemy==2.0.23
+
+# Configuration
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# Utilities
+cryptography==41.0.7
+pytz==2023.3
+
+# Data Quality
+great-expectations==0.18.8
+
+# Logging and Monitoring
+python-json-logger==2.0.7
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0

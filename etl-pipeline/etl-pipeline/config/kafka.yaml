@@ -1,0 +1,23 @@
+kafka:
+  bootstrap_servers: kafka:9092
+  topic_finance: india_finance_topic
+  topic_upi: upi_transaction_topic
+  
+consumer:
+  group_id: etl_consumer_group
+  auto_offset_reset: earliest
+  enable_auto_commit: true
+  
+producer:
+  acks: all
+  retries: 3
+  batch_size: 16384
+  linger_ms: 10
+  
+topics:
+  - name: india_finance_topic
+    partitions: 3
+    replication_factor: 1
+  - name: upi_transaction_topic
+    partitions: 3
+    replication_factor: 1

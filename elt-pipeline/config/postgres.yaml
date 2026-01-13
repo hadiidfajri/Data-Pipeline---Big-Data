@@ -1,0 +1,35 @@
+# PostgreSQL Configuration
+
+connection:
+  host: postgres
+  port: 5432
+  database: elt_database
+  user: elt_user
+  password: elt_password
+  
+pool:
+  min_connections: 1
+  max_connections: 10
+  connection_timeout: 30
+
+schema:
+  source_schema: source_data
+  
+tables:
+  india_personal_finance:
+    name: india_personal_finance
+    primary_key: id
+    indexes:
+      - age
+      - occupation
+      - city_tier
+    partition_by: null
+    
+logging:
+  level: INFO
+  query_logging: false
+  
+performance:
+  fetch_size: 1000
+  batch_size: 100
+  statement_timeout: 300000  # 5 minutes in milliseconds

@@ -1,0 +1,46 @@
+# Spark Configuration
+
+master:
+  url: spark://spark-master:7077
+  
+application:
+  name: ELT_Pipeline
+  
+executor:
+  memory: 2g
+  cores: 2
+  instances: 2
+  
+driver:
+  memory: 1g
+  cores: 1
+  
+sql:
+  shuffle_partitions: auto
+  adaptive_enabled: true
+  adaptive_coalesce_partitions: true
+  
+streaming:
+  checkpoint_location: /opt/data/checkpoints
+  trigger_interval: 30 seconds
+  stop_gracefully_on_shutdown: true
+  
+hive:
+  metastore_uris: thrift://hive-metastore:9083
+  
+hdfs:
+  namenode: hdfs://namenode:9000
+  replication: 1
+  
+performance:
+  serializer: org.apache.spark.serializer.KryoSerializer
+  compression_codec: snappy
+  broadcast_timeout: 600
+  network_timeout: 600
+  
+logging:
+  level: WARN
+  
+monitoring:
+  enabled: true
+  ui_port: 4040
