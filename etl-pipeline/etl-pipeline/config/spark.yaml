@@ -10,9 +10,9 @@ spark:
     spark.sql.adaptive.coalescePartitions.enabled: true
     spark.sql.shuffle.partitions: 200
     
-  # Packages
+  # Packages (Spark 3.3.2)
   packages:
-    - org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0
+    - org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2
     - org.postgresql:postgresql:42.6.0
     
 # Spark application configuration
