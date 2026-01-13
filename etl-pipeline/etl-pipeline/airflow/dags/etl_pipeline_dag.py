@@ -56,7 +56,7 @@ extract_data = SparkSubmitOperator(
     conn_id='spark_default',
     conf={
         'spark.master': 'spark://spark-master:7077',
-        'spark.jars.packages': 'org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0,org.postgresql:postgresql:42.6.0',
+        'spark.jars.packages': 'org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2,org.postgresql:postgresql:42.6.0',
     },
     dag=dag,
 )
