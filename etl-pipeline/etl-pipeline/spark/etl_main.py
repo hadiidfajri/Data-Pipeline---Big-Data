@@ -36,7 +36,7 @@ class ETLPipeline:
             .config("spark.sql.warehouse.dir", "/opt/hive-data/warehouse") \
             .config("spark.sql.hive.metastore.uris", "thrift://hive-metastore:9083") \
             .config("spark.jars.packages", 
-                   "org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0," +
+                   "org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2," +
                    "org.postgresql:postgresql:42.6.0") \
             .config("spark.sql.adaptive.enabled", "true") \
             .config("spark.sql.adaptive.coalescePartitions.enabled", "true") \
