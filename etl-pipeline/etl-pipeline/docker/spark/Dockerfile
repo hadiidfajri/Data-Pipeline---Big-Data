@@ -1,10 +1,10 @@
-FROM bitnami/spark:3.4.0
+FROM bitnami/spark:3.3.2-debian-11-r10
 
 USER root
 
 # Install Python dependencies
 RUN pip install --no-cache-dir \
-    pyspark==3.4.0 \
+    pyspark==3.3.2 \
     kafka-python==2.0.2 \
     psycopg2-binary==2.9.9 \
     pandas==2.0.3 \
