@@ -60,7 +60,9 @@ init-airflow:
 
 run-etl:
 	@echo "Running ETL pipeline..."
-	docker exec etl-spark-master spark-submit \
+	docker exec etl-spark-master /opt/spark/bin/spark-submit \
 		--master spark://spark-master:7077 \
-		--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.4.0,org.postgresql:postgresql:42.6.0 \
+		--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.2,org.postgresql:postgresql:42.6.0 \
+		--conf spark.sql.warehouse.dir=/opt/hive-data/warehouse \
+		--conf spark.sql.hive.metastore.uris=thrift://hive-metastore:9083 \
 		/opt/spark-apps/etl_main.py
