@@ -1,10 +1,9 @@
-FROM bitnami/spark:3.3.0
+FROM bitnami/spark:3.5.0
 
 USER root
 
 # Install Python dependencies
 RUN pip install --no-cache-dir \
-    pyspark==3.3.0 \
     kafka-python==2.0.2 \
     psycopg2-binary==2.9.5 \
     pandas==1.5.3 \
